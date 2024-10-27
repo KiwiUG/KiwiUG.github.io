@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stack and Queue</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #3a3a3a;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    header, footer {
+      background-color: #2e2e2e;
+      padding: 10px;
+      text-align: center;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    section {
+      background-color: #444;
+      border: 1px solid #666;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      color: #f9c74f;
+    }
+    .responsive-img {
+      width: 100%;
+      height: auto;
+      margin: 10px 0;
+    }
+    .love-section {
+      margin-top: 30px;
+      padding: 10px;
+      background-color: #6ab04c;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <header>
+      <h1>Stack and Queue</h1>
+      <p>Understanding key linear data structures.</p>
+    </header>
+
+    <section>
+      <h2>What is a Stack?</h2>
+      <p>
+        Stacks and queues are abstract data types that play vital roles in managing data flow and processing information in programming. A stack follows the Last-In-First-Out (LIFO) principle, meaning that the last element added to the stack is the first one to be removed. This behavior makes stacks ideal for scenarios like function calls, where the most recent call must be completed before returning to previous calls. Implementing stacks can be achieved using arrays or linked lists, with each method providing unique performance characteristics. When using arrays, stacks are often implemented with a fixed size, which can lead to stack overflow if not managed properly. On the other hand, linked lists allow for dynamic sizing, enabling stacks to grow and shrink as needed. The primary operations associated with stacks are push (adding an element) and pop (removing an element), both of which operate in constant time. Common applications of stacks include expression evaluation and syntax parsing, where operators and operands are stored in a stack to ensure proper evaluation order. In contrast, a queue operates on a First-In-First-Out (FIFO) basis, meaning that the first element added to the queue is the first one to be removed. Queues are essential in managing tasks that require orderly processing, such as print jobs in a printer or tasks in a task scheduler. Like stacks, queues can be implemented using arrays or linked lists, with each approach having its advantages. The enqueue operation (adding an element) typically occurs at the rear of the queue, while the dequeue operation (removing an element) occurs at the front, both functioning in constant time. 
+      </p>
+      <img src="data:image/png;base64,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" alt="Stack" width="750" height="450">
+    </section>
+
+    <section>
+      <h2>Stack Operations</h2>
+      <ul>
+        <li><strong>Push:</strong> Add an element to the top.</li>
+        <li><strong>Pop:</strong> Remove the top element.</li>
+        <li><strong>Peek:</strong> View the top element without removing it.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>What is a Queue?</h2>
+      <p>A queue follows the First-In-First-Out (FIFO) principle, allowing insertion at the rear and deletion from the front.The ability to manage data flow effectively, whether through LIFO or FIFO principles, allows for creative solutions to complex problems in programming and software development.Additionally, variations of stacks and queues, such as double-ended queues (deques) and priority queues, further expand their functionality and use cases. Deques allow for insertion and removal of elements from both ends, making them versatile for scenarios that require flexible access. Priority queues, on the other hand, prioritize elements based on specific criteria, ensuring that the highest priority elements are processed first. These variations demonstrate the adaptability of stack and queue structures in solving a wide range of problems. Learning to implement and manipulate stacks and queues is crucial for aspiring programmers, as these structures are prevalent in many coding challenges and competitive programming environments. Familiarity with their operations and understanding when to apply each structure can significantly enhance problem-solving skills. I find stacks and queues fascinating because of their elegant simplicity and the powerful ways they can be applied in various contexts. Understanding the behavior and implementation of queues is crucial for managing data flow in various applications, such as web servers, where incoming requests are processed in the order they arrive. Stacks and queues not only serve as fundamental data structures but also provide insight into algorithm design and optimization. Many algorithms utilize stacks and queues to facilitate efficient data processing, making them invaluable in areas such as breadth-first search (BFS) and depth-first search (DFS). For example, BFS uses a queue to explore nodes in a graph level by level, while DFS employs a stack to explore nodes depth-wise. Mastering stacks and queues is essential for tackling complex problems in computer science, as they form the basis for various algorithms and data processing techniques. Their simplicity and effectiveness make them a popular choice in both academic and practical applications. </p>
+      <img src="data:image/png;base64,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" alt="Queue" width="750" height="450">
+    </section>
+
+    <section>
+      <h2>Queue Operations</h2>
+      <ul>
+        <li><strong>Enqueue:</strong> Add an element to the rear.</li>
+        <li><strong>Dequeue:</strong> Remove the front element.</li>
+        <li><strong>Front:</strong> View the front element without removing it.</li>
+      </ul>
+    </section>
+
+    <div class="love-section">
+        <h3>What I Love Most About Stacks and Queues</h3>
+        <p>Stacks and queues represent essential patterns of data management. I find the simplicity of their operations and their various applications in programming fascinating.</p>
+    </div>
+      
+    <footer>
+      <p>Mastering stacks and queues improves coding efficiency.</p>
+    </footer>
+  </div>
+</body>
+</html>
